@@ -27,15 +27,12 @@ docker run --name "postgis" -p 25432:5432 -d -t kartoza/postgis
 ```
 
 Connect with psql (make sure you first install postgresql client tools on your host / client)
-
 ```
-docker exec -it postgis psql -h localhost -U docker -l
-
-psql -h localhost -U docker -p 25432 -l
+docker exec -it postgis psql -h localhost -U docker -p 25432 -l
 ```
 **Note:** Default postgresql user is '**docker**' with password '**docker**'.
 
-Or connect with QGIS
+Or connect with QGIS (port : 25432)
 
 ![](./images/connect-with-qgis.png)
 
@@ -45,14 +42,14 @@ To stop the container
 docker stop postgis
 ```
 
-**More commands on the image website : ** [https://registry.hub.docker.com/r/kartoza/postgis](https://registry.hub.docker.com/r/kartoza/postgis)
+**For more commands** : [https://registry.hub.docker.com/r/kartoza/postgis](https://registry.hub.docker.com/r/kartoza/postgis)
 
 
 ### Storing data on the host rather than the container
 
 ```
 mkdir -p ~/pgdata
-docker run -d -v $HOME/pgdata:/var/lib/postgresql kartoza/postgis
+docker run -d -v $HOME/pgdata:/var/lib/postgresql --name "postgis" -p 25432:5432 -d -t kartoza/postgis
 ```
 
 Connect to the default **gis** database
@@ -63,6 +60,9 @@ docker exec -it postgis psql -h localhost -U docker -d gis
 Within **psql** create a new database
 ```
 CREATE DATABASE testgis;
+
+-- to quit
+\q
 ```
 
 
