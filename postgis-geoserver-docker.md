@@ -1,8 +1,8 @@
-# Configuration and running of PostGIS/PostgreSQL/Geoserver on docker
+# Setting up PostGIS/PostgreSQL/Geoserver on docker
 
 This use case illustrate how to build a webmapping application using microservices architecture based on docker container technology
 
-## Configuration of PostGIS/PostgreSQL
+## Setup PostGIS/PostgreSQL
 
 ### Getting PostGIS image
 
@@ -113,3 +113,19 @@ GRANT ALL PRIVILEGES ON DATABASE testgis TO gisadmin;
 -- set user password
 \password gisadmin
 ``` 
+## Setup geoserver
+
+Pull the image
+``` 
+docker pull geonode/geoserver:2.15.x
+```
+
+Download [https://build.geo-solutions.it/geonode/geoserver/latest/data-2.15.x.zip](https://build.geo-solutions.it/geonode/geoserver/latest/data-2.15.x.zip) and unzip it on $HOME/data
+
+Run the image
+```
+docker run --name "geoserver" -v /var/run/docker.sock:/var/run/docker.sock -v $HOME/data:/geoserver_data/data -d -p 8080:8080 geonode/geoserver:2.15.x
+```
+
+Point the browser to [http://localhost:8080/geoserver](http://localhost:8080/geoserver) and login using **admin/geoserver**
+
