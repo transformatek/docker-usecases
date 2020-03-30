@@ -2,7 +2,9 @@
 
 This use case illustrate how to build a webmapping application using microservices architecture based on docker container technology
 
-## Getting the image of PostGIS
+## Configuration of PostGIS/PostgreSQL
+
+### Getting PostGIS image
 
 Pull the image
 ``` 
@@ -27,14 +29,87 @@ docker run --name "postgis" -p 25432:5432 -d -t kartoza/postgis
 Connect with psql (make sure you first install postgresql client tools on your host / client)
 
 ```
+docker exec -it postgis psql -h localhost -U docker -l
+
 psql -h localhost -U docker -p 25432 -l
 ```
 **Note:** Default postgresql user is '**docker**' with password '**docker**'.
 
-Connect with QGIS
+Or connect with QGIS
 
 ![](./images/connect-with-qgis.png)
 
 
+To stop the container 
+```
+docker stop postgis
+```
+
 **More commands on the image website : ** [https://registry.hub.docker.com/r/kartoza/postgis](https://registry.hub.docker.com/r/kartoza/postgis)
 
+
+### Storing data on the host rather than the container
+
+```
+mkdir -p ~/pgdata
+docker run -d -v $HOME/pgdata:/var/lib/postgresql kartoza/postgis
+```
+
+Connect to the default **gis** database
+```
+docker exec -it postgis psql -h localhost -U docker -d gis
+```
+
+Within **psql** create a new database
+```
+CREATE DATABASE testgis;
+```
+
+
+Connect to the default **testgis** database
+```
+docker exec -it postgis psql -h localhost -U docker -d testgis
+```
+
+Enable postgis extension
+
+```
+CREATE extension postgis;
+
+-- Check the extension installation
+SELECT postgis_full_version();
+```
+
+Create a table and add geometry column 
+```
+-- Create schema to hold data
+CREATE SCHEMA gis_schema;
+
+-- Create a new simple PostgreSQL table
+CREATE TABLE gis_schema.points_table (id serial, num integer, name varchar);
+
+\d  gis_schema.points_table;
+
+-- Add a point using the old constraint based behavior
+SELECT AddGeometryColumn ('gis_schema','points_table','geom',4326,'POINT',2, false);
+
+\d  gis_schema.points_table;
+
+-- to display all tables in the schema
+\d  gis_schema.*;
+
+-- to display all tables in all schemas
+\d  *.*;
+
+-- to quit
+\q
+```
+
+Create a superuser and grant him the required privileges
+```
+CREATE USER gisadmin;
+GRANT ALL PRIVILEGES ON DATABASE testgis TO gisadmin;
+
+-- set user password
+\password gisadmin
+``` 
