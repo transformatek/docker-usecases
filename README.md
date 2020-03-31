@@ -9,8 +9,14 @@ Optional :
 
 - [setup a docker user defined bridge network](https://docs.docker.com/network/bridge/##differences-between-user-defined-bridges-and-the-default-bridge)
 
-## Use cases :
+## Setup images on docker :
 
-- [Setup a PostGIS/PostgreSQL server on docker.](./postgis-on-docker.md) 
-- [Setup a Geoserver webmapping server on docker.](./geoserver-on-docker.md) 
-- [Setup a odoo Entreprise management system on docker.](./odoo-on-docker.md) 
+- [PostGIS/PostgreSQL Spatial DBMS](./setup-images-on-docker/postgis-on-docker.md) 
+- [Odoo Entreprise management system](./setup-images-on-docker/odoo-on-docker.md) 
+- [Geoserver webmapping server](./setup-images-on-docker/geoserver-on-docker.md) 
+
+## Use cases
+
+### Odoo
+
+- [Summary of odoo use cases](./odoo-usecases/odoo-usecases.md)

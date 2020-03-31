@@ -5,7 +5,7 @@ This use case illustrate how to deploy odoo when building a webmapping applicati
 ## Prerequisites
 
 - a proper docker installation on the machine.
-- [setup a PostGIS/PostgreSQL server on docker.](./postgis-docker.md) 
+- [setup a PostGIS/PostgreSQL server on docker.](./postgis-on-docker.md) 
 
 ## Getting odoo image
 

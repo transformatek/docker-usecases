@@ -8,7 +8,7 @@ This use case illustrate how to deploy geoserver when building a webmapping appl
 
 Optional :
 
-- [Setup a PostGIS/PostgreSQL server on docker.](./postgis-docker.md) 
+- [Setup a PostGIS/PostgreSQL server on docker.](./postgis-on-docker.md) 
 
 ## Getting Geosever image
 
