@@ -1,10 +1,12 @@
-# Setting up PostGIS/PostgreSQL/Geoserver on docker
+# Setting up PostGIS/PostgreSQL on docker
 
-This use case illustrate how to build a webmapping application using microservices architecture based on docker container technology
+This use case illustrate how to setup PostGIS/PostgreSQL that can be used to build an application using microservices architecture based on docker container technology.
+
+## Prerequisite 
+
+- a proper docker installation on the machine.
 
 ## Setup PostGIS/PostgreSQL
-
-### Getting PostGIS image
 
 Pull the image
 ``` 
@@ -21,9 +23,11 @@ CONTAINER ID        IMAGE               COMMAND                  CREATED        
 aaa  kartoza/postgis     "/bin/sh -c /docker-…"   ..ago      ... min       0.0.0.0:25432->5432/tcp   postgis
 ```
 
-Run the image
+## Run the image
+
 ```
-docker run --name "postgis" -p 25432:5432 -d -t kartoza/postgis
+mkdir -p ~/pgdata
+docker run -d -v $HOME/pgdata:/var/lib/postgresql --name "postgis" -p 25432:5432 -d -t kartoza/postgis
 ```
 
 Connect with psql (make sure you first install postgresql client tools on your host / client)
@@ -32,25 +36,7 @@ docker exec -it postgis psql -h localhost -U docker -p 25432 -l
 ```
 **Note:** Default postgresql user is '**docker**' with password '**docker**'.
 
-Or connect with QGIS (port : 25432)
-
-![](./images/connect-with-qgis.png)
-
-
-To stop the container 
-```
-docker stop postgis
-```
-
-**For more commands** : [https://registry.hub.docker.com/r/kartoza/postgis](https://registry.hub.docker.com/r/kartoza/postgis)
-
-
-### Storing data on the host rather than the container
-
-```
-mkdir -p ~/pgdata
-docker run -d -v $HOME/pgdata:/var/lib/postgresql --name "postgis" -p 25432:5432 -d -t kartoza/postgis
-```
+## Create a spatial database and a GIS admin
 
 Connect to the default **gis** database
 ```
@@ -64,7 +50,6 @@ CREATE DATABASE testgis;
 -- to quit
 \q
 ```
-
 
 Connect to the default **testgis** database
 ```
@@ -110,22 +95,20 @@ Create a superuser and grant him the required privileges
 CREATE USER gisadmin;
 GRANT ALL PRIVILEGES ON DATABASE testgis TO gisadmin;
 
+ALTER USER odoo WITH SUPERUSER, CREATEDB, CREATEROLE;
+
+-- Check privileges
+\du
+
 -- set user password
 \password gisadmin
 ``` 
-## Setup geoserver
 
-Pull the image
-``` 
-docker pull geonode/geoserver:2.15.x
-```
+## Connect with QGIS (optional)
 
-Download [https://build.geo-solutions.it/geonode/geoserver/latest/data-2.15.x.zip](https://build.geo-solutions.it/geonode/geoserver/latest/data-2.15.x.zip) and unzip it on $HOME/data
+![](./images/connect-with-qgis.png)
 
-Run the image
-```
-docker run --name "geoserver" -v /var/run/docker.sock:/var/run/docker.sock -v $HOME/data:/geoserver_data/data -d -p 8080:8080 geonode/geoserver:2.15.x
-```
 
-Point the browser to [http://localhost:8080/geoserver](http://localhost:8080/geoserver) and login using **admin/geoserver**
+## References : 
 
+- [https://registry.hub.docker.com/r/kartoza/postgis](https://registry.hub.docker.com/r/kartoza/postgis)
