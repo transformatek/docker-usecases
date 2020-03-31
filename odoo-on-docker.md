@@ -1,4 +1,4 @@
-# Setting up Geoserver on docker
+# Setting up Odoo on docker
 
 This use case illustrate how to deploy odoo when building a webmapping application using microservices architecture based on docker container technology.
 
