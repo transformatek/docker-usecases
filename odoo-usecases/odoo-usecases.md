@@ -16,5 +16,5 @@ Ce document fait référence aux explications étapes par étapes du déploiment
 
 ## Détail des modules
 
-- [Module Messages](./odoo-messages-fr.md)
+- [Module Messages](./odoo-mod-messages-fr.md)
 

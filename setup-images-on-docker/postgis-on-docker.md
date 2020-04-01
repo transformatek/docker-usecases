@@ -34,6 +34,12 @@ Connect with psql (make sure you first install postgresql client tools on your h
 ```
 docker exec -it postgis psql -h localhost -U docker -p 25432 -l
 ```
+
+or with a local **psql** 
+```
+psql -h localhost -U docker -p 25432 -l
+```
+
 **Note:** Default postgresql user is '**docker**' with password '**docker**'.
 
 ## Create a spatial database and a GIS admin

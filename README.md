@@ -19,4 +19,4 @@ Optional :
 
 ### Odoo
 
-- [Summary of odoo use cases](./odoo-usecases/odoo-usecases.md)
+- [Odoo Deployers/Users guide](./odoo-usecases/odoo-usecases.md)
