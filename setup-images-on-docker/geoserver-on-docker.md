@@ -1,6 +1,6 @@
 # Setting up Geoserver on docker
 
-This use case illustrate how to deploy geoserver when building a webmapping application using microservices architecture based on docker container technology.
+This use case illustrate how to deploy **geoserver** when building a webmapping application using microservices architecture based on docker container technology.
 
 ## Prerequisite 
 
@@ -14,20 +14,31 @@ Optional :
 
 Pull the image
 ``` 
-docker pull geonode/geoserver:2.15.x
+docker pull kartoza/geoserver
 ```
 
-Download [https://build.geo-solutions.it/geonode/geoserver/latest/data-2.15.x.zip](https://build.geo-solutions.it/geonode/geoserver/latest/data-2.15.x.zip) and unzip it on $HOME/data
+Create an empty data directory to use to persist your data.
+```
+mkdir -p ~/geoserver_data && chmod -R a+rwx ~/geoserver_data
+```
 
 Run the image
 ```
-docker run --name "geoserver" -v /var/run/docker.sock:/var/run/docker.sock -v $HOME/data:/geoserver_data/data -d -p 8080:8080 geonode/geoserver:2.15.x
+docker run --name "geoserver" -v $HOME/geoserver_data:/opt/geoserver/data_dir/mydata -p 8080:8080 -d -t kartoza/geoserver
+```
+
+If you have a running **postgis** database, you can run the image with 
+```
+docker run --name "geoserver" -v $HOME/geoserver_data:/opt/geoserver/data_dir/mydata --link postgis:postgis -p 8080:8080 -d -t kartoza/geoserver
 ```
 
 Point the browser to [http://localhost:8080/geoserver](http://localhost:8080/geoserver) and login using **admin/geoserver**
 
+To connect to the **postgis** database, use the following parameters
+
+![](./images/connect-geoserver-to-postgis.png)
 
 ## References : 
 
-- [https://github.com/GeoNode/geoserver-docker](https://github.com/GeoNode/geoserver-docker)
+- [https://hub.docker.com/r/kartoza/geoserver/](https://hub.docker.com/r/kartoza/geoserver/)
 
