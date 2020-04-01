@@ -3,5 +3,5 @@
 
 
 ----
-[Revenir au sommaire](./odoo-usecases.md)
+[Retour au sommaire](./odoo-usecases.md)
 

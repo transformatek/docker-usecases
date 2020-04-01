@@ -15,3 +15,6 @@ Aussi, les messages sont intégrés à tous les modules odoo, ce qui permet de c
 
 Pour plus de détails, il faut consulter le [site officiel d'odoo](https://www.odoo.com/fr_FR/page/discuss).  
 
+
+----
+[Retour au sommaire](./odoo-usecases.md)

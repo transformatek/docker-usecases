@@ -18,7 +18,7 @@ Il importe de noter que dans **odoo** la notion d'utilisateur est séparée de l
 
 Aussi, dans **odoo** un utilisateur externe (qui n'est pas un employé) peut avoir accès à certaines données (client, fournisseur, sous-traitant, ...).
 
-**NB** : de nouvelles préférences peuvent être ajoutées à cette boite de dialogue lorsque des modules sont ajoutés. 
+**NB** : de nouvelles préférences peuvent être ajoutées à cette boite de dialogue lorsque des modules sont installés. 
 
 ----
-[Revenir au sommaire](./odoo-usecases.md)
+[Retour au sommaire](./odoo-usecases.md)

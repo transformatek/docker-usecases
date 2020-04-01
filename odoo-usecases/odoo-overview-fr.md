@@ -13,5 +13,5 @@ Odoo, anciennement OpenERP2 et Tiny ERP, est initialement un progiciel open-sour
 L'autre atout majeur d'odoo est sa facilité de personalisation. En plus des fonctionnalités accessibles directement par l'interface utilisateur, la création de nouevaux modules est assez simple pour un developeur maitrisant Python, Javascript et HTML.
 
 ----
-[Revenir au sommaire](./odoo-usecases.md)
+[Retour au sommaire](./odoo-usecases.md)
 

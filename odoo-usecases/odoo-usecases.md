@@ -1,19 +1,20 @@
-# Summary of odoo use cases
+# Sommaire des cas d'utilisation d'odoo
 
-This document refers to the step by step explanations of the odoo 13 community modules deploiement.
+Ce document fait référence aux explications étapes par étapes du déploiment des modules standards d'odoo 13 Community.
 
-## Prerequisites
+## Prérequis
 
-- a proper installation of odoo ERP. For a docker deployment see [setup odoo on docker.](../setup-images-on-docker/odoo-on-docker.md) 
+- une installation propre d'odoo ERP. Pour un deployment avec docker consulter [setup odoo on docker.](../setup-images-on-docker/odoo-on-docker.md) 
 
-## Configuration overview (in french)
+## Configuration
 
-- [Odoo Overview](./odoo-overview-fr.md)
-- [User preferences](./odoo-user-preferences-fr.md)
-- [Applications (admin)](./odoo-applications-fr.md)
+- [Aperçu général](./odoo-overview-fr.md)
+- [Préférences utilisateur](./odoo-user-preferences-fr.md)
 - [Configuration (admin)](./odoo-configuration-fr.md)
+- [Applications (admin)](./odoo-applications-fr.md)
 
-## Modules details (in french)
 
-- [Module discuss (Messages/fr)](./odoo-messages-fr.md)
+## Détail des modules
+
+- [Module Messages](./odoo-messages-fr.md)
 
