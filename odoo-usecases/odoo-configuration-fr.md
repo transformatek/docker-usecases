@@ -4,7 +4,7 @@ Cette partie, **réservée aux adminstrateurs**, permet de définir les paramèt
 
 **Important** : de nouveaux menus/options peuvent être ajoutés à cette partie lorsque des modules sont installés. 
 
-![](./images/config-overview.png)
+![](./images/config-menu.png)
 
 ## Utilisateurs 
 La partie utilisateurs permet de gérer les utilisateurs (ajout / supression / modification / archivage).
