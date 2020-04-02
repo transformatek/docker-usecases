@@ -18,7 +18,6 @@ Sur chaque carte, représentant un module, on peut lire le **nom** et la **descr
 
 ![](./images/apps-cards.png)
 
-
 ## Magasin de thèmes & Applis tierces
 
 Ces menus donnent accès à des modules et des thèmes supplémentaires disponibles en lignes. Ces extensions ne sont pas toutes gratuites.

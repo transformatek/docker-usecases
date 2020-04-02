@@ -8,8 +8,6 @@ Ce module basic permet d'améliorez la communication en équipe. Il permet de cr
 
 ![](./images/message-welcome.png)
 
-
-
 Les messages étant intégrés à tous les modules odoo, cela permet de collaborer sur chaque sujet (facture, devis, employé, article, ...).
 
 ## Créer un nouveau canal 
@@ -36,20 +34,14 @@ Les messages envoyés dans les cannaux publics, privés ou directes peuvent cont
 
 ![](./images/message-content-call-user.png)
 
-- avec **/** vous aver accès à des commandes spécifiques au canal (help, who, leave)
+- avec **/** vous aver accès à des commandes spécifiques au canal (help, who, leave).
 - avec **@** vous pouver alerter un utilisateur qui recevrera une notifcation dans la barre des **conversations**.
+- avec **:** vous pouver faire appel a une activité (nécessite module LiveChat).
 
-## Conversations 
+# Plus de détails 
 
-En haut à droite vous aver un icone de notifications qui vous indique le nombre de messages non lus. Aindi, vous pouver directement les consulter et envoyer des réponses ou de nouveau messages.  
-
-![](./images/message-conversations.png)
-
-**Important** : odoo peut être configuré pour envoyer des notifications ditectement sur le bureau du système d'exploitation. Ceci doit être autorisé dans les paramètres de notifications du navigateur utilisé.
-
----
-Pour plus de détails, consulter le [site officiel d'odoo](https://www.odoo.com/fr_FR/page/discuss).  
-
+- Pour la collaboration, consulter la fonctionnalité [conversations](./odoo-conversations.md).
+- [Site officiel d'odoo](https://www.odoo.com/fr_FR/page/discuss).  
 
 ----
 [Retour au sommaire](./odoo-usecases.md)

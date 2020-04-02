@@ -9,11 +9,18 @@ Ce document fait référence aux explications étapes par étapes du déploiment
 ## Configuration
 
 - [Aperçu général](./odoo-overview-fr.md)
-- [Préférences utilisateur](./odoo-user-preferences-fr.md)
 - [Applications (admin)](./odoo-applications-fr.md)
 - [Configuration (admin)](./odoo-configuration-fr.md)
+- [Préférences utilisateur](./odoo-user-preferences-fr.md)
+- [Conversations](./odoo-conversations.md)
 
 ## Détail des modules
 
 - [Module Messages](./odoo-mod-messages-fr.md)
 - [Module Employés](./odoo-mod-employee-fr.md)
+
+# Ressources supplémentaires 
+
+- [Scénario de déploiement simplifié](odoo-deploiement-scenario.md)
+- [Site web odoo](https://www.odoo.com/fr_FR/page/all-apps)
+- [odoo eLearning sur YouTube](https://www.youtube.com/watch?v=u4uJTeqskxc&list=PL1-aSABtP6AD-t0GEoxMXgCa_qLsHs5PR)

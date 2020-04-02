@@ -9,12 +9,10 @@ Ce module est destiné à gérer efficacement les employés en centralisant tout
 - recevoir des alertes pour toute nouvelle demande de congés, demande d'allocation, candidature, évaluation et plus encore (en fonction des modules installés).
 
 
+# Plus de détails 
 
-
-
-
-
-Pour plus de détails, consulter le [site officiel d'odoo](https://www.odoo.com/fr_FR/page/employees).  
+- Pour la collaboration sur les formulaires de ce module, consulter la fonctionnalité [conversations](./odoo-conversations.md).
+- [Site officiel d'odoo](https://www.odoo.com/fr_FR/page/employees).  
 
 ----
 [Retour au sommaire](./odoo-usecases.md)
