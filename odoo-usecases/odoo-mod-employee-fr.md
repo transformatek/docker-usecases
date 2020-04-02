@@ -1,4 +1,4 @@
-# Module Employés d'odoo
+# Module Employés
 
 Ce document illustre les différentes fonctionnalités du module **Employés** d'odoo 13 community. 
 

@@ -1,18 +1,53 @@
-# Module Messages d'odoo
+# Module Messages
 
 Ce document illustre les différentes fonctionnalités du module **Messages** d'odoo 13 community. 
 
-Ce module basic permet d'améliorez la communication en équipe. Il permet de créer des canaux de discussions privées ou en groupe, intégrées avec tous les modules.
+## Aperçu 
+
+Ce module basic permet d'améliorez la communication en équipe. Il permet de créer des canaux de discussions privées ou en groupe.
 
 ![](./images/message-welcome.png)
 
+
+
+Les messages étant intégrés à tous les modules odoo, cela permet de collaborer sur chaque sujet (facture, devis, employé, article, ...).
+
+## Créer un nouveau canal 
 - Les canaux publics permettent de diffuser des informations à tous les employées et de recevoir/discuter les feedback afin d'apporter des éclaircissements si nécessaire.
 - Les cannaux privés permettent aux équipes de discuter des sujets qui les concernent (projets, ventes, RH, marketing, ...)
-- Les messages directes ne sont visibles que par les interlocuteurs.
 
-Aussi, les messages sont intégrés à tous les modules odoo, ce qui permet de collaborer sur chaque sujet (facture, devis, employé, article, ...).
+![](./images/message-create-channel.png)
 
+Une fois le canal privé ou public crée, vous pouvez définir ses propriétes, comme le nom, la description, la confidentialités et les membres.
 
+![](./images/message-set-channel-props.png)
+
+![](./images/message-channel-props.png)
+
+## Messages directes
+
+Les messages directes sont envoyer directement à la personne concernée sur un canal **MESSAGES DIRECTS**. Ils ne sont visibles que par les interlocuteurs.
+
+![](./images/message-new-direct.png)
+
+## Créer du contenu (messages)
+
+Les messages envoyés dans les cannaux publics, privés ou directes peuvent contenir du texte, des émojis, et des fichiers attachés (images, pdf, text, ...).
+
+![](./images/message-content-call-user.png)
+
+- avec **/** vous aver accès à des commandes spécifiques au canal (help, who, leave)
+- avec **@** vous pouver alerter un utilisateur qui recevrera une notifcation dans la barre des **conversations**.
+
+## Conversations 
+
+En haut à droite vous aver un icone de notifications qui vous indique le nombre de messages non lus. Aindi, vous pouver directement les consulter et envoyer des réponses ou de nouveau messages.  
+
+![](./images/message-conversations.png)
+
+**Important** : odoo peut être configuré pour envoyer des notifications ditectement sur le bureau du système d'exploitation. Ceci doit être autorisé dans les paramètres de notifications du navigateur utilisé.
+
+---
 Pour plus de détails, consulter le [site officiel d'odoo](https://www.odoo.com/fr_FR/page/discuss).  
 
 

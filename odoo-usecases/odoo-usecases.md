@@ -10,11 +10,10 @@ Ce document fait référence aux explications étapes par étapes du déploiment
 
 - [Aperçu général](./odoo-overview-fr.md)
 - [Préférences utilisateur](./odoo-user-preferences-fr.md)
-- [Configuration (admin)](./odoo-configuration-fr.md)
 - [Applications (admin)](./odoo-applications-fr.md)
-
+- [Configuration (admin)](./odoo-configuration-fr.md)
 
 ## Détail des modules
 
 - [Module Messages](./odoo-mod-messages-fr.md)
-
+- [Module Employés](./odoo-mod-employee-fr.md)
