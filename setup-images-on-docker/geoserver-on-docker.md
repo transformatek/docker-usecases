@@ -38,7 +38,27 @@ To connect to the **postgis** database, use the following parameters
 
 ![](./images/connect-geoserver-to-postgis.png)
 
-## References : 
+# Configuration with nginx and dockerized geoserver
+
+Add the following lines to your enabled site configuration file  ```/etc/nginx/sites-available/[your-site.com]```
+
+```
+location /geoserver/ {
+    proxy_pass http://127.0.0.1:8080/geoserver/;
+    proxy_pass_header Set-Cookie;
+    proxy_set_header Host $host;
+    proxy_set_header X-Forwarded-Proto $scheme;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+}
+```
+
+Then test and reload nginx service
+```
+sudo nginx -t
+sudo service nginx reload
+```
+
+# References : 
 
 - [https://hub.docker.com/r/kartoza/geoserver/](https://hub.docker.com/r/kartoza/geoserver/)
 
