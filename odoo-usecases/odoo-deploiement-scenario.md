@@ -30,5 +30,16 @@ Les activités d'apprentissage de ce module sont :
 
 Pour chaque activité, créer les cannaux correspondants et produire du contenu (texte, emojis, fichiers attachés, ...).
 
-
 # Module Employés
+
+Les activités d'apprentissage de ce module sont : 
+1. identifier la hiérarchie des structures existantes dans l'entreprise et les postes de travail.
+1. créer les départements.
+1. créer les postes de travail.
+1. créer des employés gestionnaires et les associés aux départements.
+1. créer des employés collaborateurs.
+1. identifier les parcours (plans) standards des employés dans l'entreprise et les renseigner.
+1. lancer des plans sur des employés.
+1. associés des employés à des comptes utilisateurs et inviter les à se connecter.
+    1. lancer des conversations directes avec ces employés.
+    1. vérifier les informations affichées à ces utilisateurs dans leur annuaire des salariés.
