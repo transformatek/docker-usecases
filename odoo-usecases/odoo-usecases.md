@@ -33,6 +33,8 @@ Ce document fait référence aux explications étapes par étapes du déploiment
 
 # Ressources supplémentaires 
 
-- [Scénario de déploiement simplifié](odoo-deploiement-scenario.md)
+
 - [Site web odoo](https://www.odoo.com/fr_FR/page/all-apps)
+- [Documentation utilisateur odoo](https://www.odoo.com/documentation/user/13.0/fr/index.html)
 - [odoo eLearning sur YouTube](https://www.youtube.com/watch?v=u4uJTeqskxc&list=PL1-aSABtP6AD-t0GEoxMXgCa_qLsHs5PR)
+- [Scénario de déploiement simplifié](odoo-deploiement-scenario.md)

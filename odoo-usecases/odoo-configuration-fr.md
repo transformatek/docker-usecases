@@ -61,6 +61,17 @@ Ces paramètres sont essentiels pour la personnalisation d'odoo aux besoins de l
 
 Pour avoir un aperçu des rapports, utiliser le menu **_Imprimer / Aperçu de rapprt externe_**, dans la page relative à la [société](#sociétés).
 
+### Messages
+
+La section **Messages** permet de définir les paramètres realtifs aux types d'activités et au serveur de messagerie externe.
+
+![](./images/config-message-activities.png)
+
+Dans la section types d'activités, l'administrateur peut définir des activités standardisées qui seront utilisées dans d'autres modules (Employés, Notes, Ventes,...).  
+
+![](./images/config-message-activity-new.png)
+
+
 ----
 [Retour au sommaire](./odoo-usecases.md)
 
