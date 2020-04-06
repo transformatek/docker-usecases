@@ -14,9 +14,3 @@ Optional :
 - [PostGIS/PostgreSQL Spatial DBMS](./setup-images-on-docker/postgis-on-docker.md) 
 - [Odoo Entreprise management system](./setup-images-on-docker/odoo-on-docker.md) 
 - [Geoserver webmapping server](./setup-images-on-docker/geoserver-on-docker.md) 
-
-## Use cases
-
-### Odoo
-
-- [Odoo Deployers/Users guide](./odoo-usecases/odoo-usecases.md)
