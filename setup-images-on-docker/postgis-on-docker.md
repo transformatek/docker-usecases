@@ -9,12 +9,12 @@ This use case illustrate how to setup PostGIS/PostgreSQL that can be used to bui
 ## Setup PostGIS/PostgreSQL
 
 Pull the image
-``` 
+```bash 
 docker pull kartoza/postgis
 ```
 
 Check that the image is installed
-```
+```bash
 docker container ls 
 ```
 Should have 
@@ -25,18 +25,18 @@ aaa  kartoza/postgis     "/bin/sh -c /docker-…"   ..ago      ... min       0.0
 
 ## Run the image
 
-```
+```bash
 mkdir -p ~/pgdata
 docker run -d -v $HOME/pgdata:/var/lib/postgresql --name "postgis" -p 25432:5432 -d -t kartoza/postgis
 ```
 
 Connect with psql (make sure you first install postgresql client tools on your host / client)
-```
+```bash
 docker exec -it postgis psql -h localhost -U docker -p 25432 -l
 ```
 
 or with a local **psql** 
-```
+```bash
 psql -h localhost -U docker -p 25432 -l
 ```
 
@@ -45,12 +45,12 @@ psql -h localhost -U docker -p 25432 -l
 ## Create a spatial database and a GIS admin
 
 Connect to the default **gis** database
-```
+```bash
 docker exec -it postgis psql -h localhost -U docker -d gis
 ```
 
 Within **psql** create a new database
-```
+```sql
 CREATE DATABASE testgis;
 
 -- to quit
@@ -58,13 +58,13 @@ CREATE DATABASE testgis;
 ```
 
 Connect to the default **testgis** database
-```
+```bash
 docker exec -it postgis psql -h localhost -U docker -d testgis
 ```
 
 Enable postgis extension
 
-```
+```sql
 CREATE extension postgis;
 
 -- Check the extension installation
@@ -72,7 +72,7 @@ SELECT postgis_full_version();
 ```
 
 Create a table and add geometry column 
-```
+```sql
 -- Create schema to hold data
 CREATE SCHEMA gis_schema;
 
@@ -97,7 +97,7 @@ SELECT AddGeometryColumn ('gis_schema','points_table','geom',4326,'POINT',2, fal
 ```
 
 Create a superuser and grant him the required privileges
-```
+```sql
 CREATE USER gisadmin;
 GRANT ALL PRIVILEGES ON DATABASE testgis TO gisadmin;
 

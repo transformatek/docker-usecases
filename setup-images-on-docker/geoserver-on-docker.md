@@ -13,22 +13,22 @@ Optional :
 ## Getting Geosever image
 
 Pull the image
-``` 
+```bash 
 docker pull kartoza/geoserver
 ```
 
 Create an empty data directory to use to persist your data.
-```
+```bash
 mkdir -p ~/geoserver_data && chmod -R a+rwx ~/geoserver_data
 ```
 
 Run the image
-```
+```bash
 docker run --name "geoserver" -v $HOME/geoserver_data:/opt/geoserver/data_dir/mydata -p 8080:8080 -d -t kartoza/geoserver
 ```
 
 If you have a running **postgis** database, you can run the image with 
-```
+```bash
 docker run --name "geoserver" -v $HOME/geoserver_data:/opt/geoserver/data_dir/mydata --link postgis:postgis -p 8080:8080 -d -t kartoza/geoserver
 ```
 
@@ -53,7 +53,7 @@ location /geoserver/ {
 ```
 
 Then test and reload nginx service
-```
+```bash
 sudo nginx -t
 sudo service nginx reload
 ```
