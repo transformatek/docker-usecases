@@ -60,5 +60,5 @@ Point the browser to [http://localhost:8069](http://localhost:8069) and setup a 
 
 ## References : 
 
-- [https://registry.hub.docker.com/\_/odoo/](https://registry.hub.docker.com/\_/odoo/)
+- [https://registry.hub.docker.com\_/odoo/](https://registry.hub.docker.com/\_/odoo/)
 
