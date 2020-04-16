@@ -50,6 +50,7 @@ docker run -v /path/to/config:/etc/odoo -p 8069:8069 --name odoo --link postgis:
 ## Mount custom addons
 
 ```bash
+chmod ugo+rwx /path/to/addons
 docker run -v /path/to/addons:/mnt/extra-addons -p 8069:8069 --name odoo --link postgis:db -t odoo
 ```
 
