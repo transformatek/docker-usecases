@@ -32,6 +32,7 @@ docker run -d -v $HOME/pgdata:/var/lib/postgresql --name "postgis" -p 25432:5432
 
 Connect with psql (make sure you first install postgresql client tools on your host / client)
 ```bash
+sudo apt-get install -y postgresql-client
 docker exec -it postgis psql -h localhost -U docker -p 25432 -l
 ```
 
@@ -101,7 +102,9 @@ Create a superuser and grant him the required privileges
 CREATE USER gisadmin;
 GRANT ALL PRIVILEGES ON DATABASE testgis TO gisadmin;
 
-ALTER USER odoo WITH SUPERUSER, CREATEDB, CREATEROLE;
+ALTER USER gisadmin WITH SUPERUSER;
+ALTER USER gisadmin WITH CREATEDB;
+ALTER USER gisadmin WITH CREATEROLE;
 
 -- Check privileges
 \du
