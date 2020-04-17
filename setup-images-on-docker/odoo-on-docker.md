@@ -53,7 +53,11 @@ docker run -v /path/to/config:/etc/odoo -p 8069:8069 --name odoo --link postgis:
 chmod ugo+rwx /path/to/addons
 docker run -v /path/to/addons:/mnt/extra-addons -p 8069:8069 --name odoo --link postgis:db -t odoo
 ```
+## with custom odoo password 
 
+```bash
+docker run -v /path/to/addons:/mnt/extra-addons -p 8069:8069 --name odoo -e POSTGRES_PASSWORD=<pwd> --link postgis:db -t odoo
+```
 
 Point the browser to [http://localhost:8069](http://localhost:8069) and setup a new database.
 
