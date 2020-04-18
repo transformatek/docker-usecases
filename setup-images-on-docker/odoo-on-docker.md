@@ -50,19 +50,49 @@ docker run -v /path/to/config:/etc/odoo -p 8069:8069 --name odoo --link postgis:
 ## Mount custom addons
 
 ```bash
-chmod ugo+rwx /path/to/addons
-docker run -v /path/to/addons:/mnt/extra-addons -p 8069:8069 --name odoo --link postgis:db -t odoo
+mkdir -p ~/odoo-addons && chmod -R ugo+rwx ~/odoo-addons
+docker run -v $HOME/odoo-addons:/mnt/extra-addons -p 8069:8069 --name odoo --link postgis:db -t odoo
 ```
 ## with custom odoo password 
 
 ```bash
-docker run -v /path/to/addons:/mnt/extra-addons -p 8069:8069 --name odoo -e POSTGRES_PASSWORD=<pwd> --link postgis:db -t odoo
+docker run -v $HOME/odoo-addons:/mnt/extra-addons -p 8069:8069 --name odoo -e POSTGRES_PASSWORD=<pwd> --link postgis:db -t odoo
 ```
 
 Point the browser to [http://localhost:8069](http://localhost:8069) and setup a new database.
 
+## Nginx configuration file sample
+
+```apache
+server {
+
+        root /var/www/subdomain.domain.my/html;
+        index index.html index.htm index.nginx-debian.html;
+
+        server_name subdomain.domain.my;
+
+        proxy_redirect off;
+
+        location / {
+            proxy_connect_timeout   3600;
+            proxy_read_timeout      3600;
+            proxy_send_timeout      3600;
+            send_timeout            3600;
+
+            proxy_pass http://127.0.0.1:8069/;
+            proxy_pass_header Set-Cookie;
+            proxy_set_header Host $host;
+            proxy_set_header X-Forwarded-Proto $scheme;
+            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        }
+
+        gzip on;
+        gzip_min_length 1000;
+}
+```
 
 ## References : 
 
 - [https://registry.hub.docker.com\_/odoo/](https://registry.hub.docker.com/\_/odoo/)
+- [https://www.cybrosys.com/blog/how-to-configure-odoo-with-nginx-as-reverse-proxy](https://www.cybrosys.com/blog/how-to-configure-odoo-with-nginx-as-reverse-proxy)
 

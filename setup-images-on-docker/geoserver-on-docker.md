@@ -38,24 +38,31 @@ To connect to the **postgis** database, use the following parameters
 
 ![](./images/connect-geoserver-to-postgis.png)
 
-# Configuration with nginx and dockerized geoserver
+## Nginx configuration file sample
 
-Add the following lines to your enabled site configuration file  ```/etc/nginx/sites-available/[your-site.com]```
+```apache
+server {
 
-```
-location /geoserver/ {
-    proxy_pass http://127.0.0.1:8080/geoserver/;
-    proxy_pass_header Set-Cookie;
-    proxy_set_header Host $host;
-    proxy_set_header X-Forwarded-Proto $scheme;
-    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        root /var/www/geoserver.domain.my/html;
+        index index.html index.htm index.nginx-debian.html;
+
+        server_name geoserver.domain.my;
+	
+	proxy_redirect off;
+
+	location / {
+		return $scheme://geoserver.domain.my/geoserver$request_uri;
+	}
+
+        location /geoserver {
+	    proxy_pass http://127.0.0.1:8080/geoserver;
+	    proxy_pass_header Set-Cookie;
+	    proxy_set_header Host $host;
+	    proxy_set_header X-Forwarded-Proto $scheme;
+	    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+	}
 }
-```
 
-Then test and reload nginx service
-```bash
-sudo nginx -t
-sudo service nginx reload
 ```
 
 # References : 

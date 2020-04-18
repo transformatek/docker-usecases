@@ -26,7 +26,7 @@ aaa  kartoza/postgis     "/bin/sh -c /docker-…"   ..ago      ... min       0.0
 ## Run the image
 
 ```bash
-mkdir -p ~/pgdata
+mkdir -p ~/pgdata  && chmod -R ugo+rwx ~/pgdata
 docker run -d -v $HOME/pgdata:/var/lib/postgresql --name "postgis" -p 25432:5432 -d -t kartoza/postgis
 ```
 
