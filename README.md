@@ -9,9 +9,9 @@ Setting up Developement environments on docker containers.
 ## Content 
 
 * Setup PHP developement envirnment on docker :
-    * [Php and Nginx](./php-nginx/README.md) 
-    * [Php - Nginx - MySQL - PhpMyAdmin](./php-nginx-mysql-phpmyadmin/README.md) 
-    * [WordPress - MySQL - PhpMyAdmin](./wordpress-mysql-phpmyadmin/README.md) 
+    * [Php and Nginx](./php-nginx/) 
+    * [Php - Nginx - MySQL - PhpMyAdmin](./php-nginx-mysql-phpmyadmin/) 
+    * [WordPress - MySQL - PhpMyAdmin](./wordpress-mysql-phpmyadmin/) 
 
 * Setup images on docker :
     * [PostGIS/PostgreSQL Spatial DBMS](./setup-images-on-docker/postgis-on-docker.md) 
