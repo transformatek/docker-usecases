@@ -1,0 +1,1 @@
+https://github.com/Alfresco/acs-community-deployment
