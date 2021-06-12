@@ -1,0 +1,36 @@
+version: '2'
+services:
+
+  db:
+    container_name: odoo10_db
+    image: postgres:10
+    hostname: postgres
+    ports:
+      - "5050:5432"
+    environment:
+      - POSTGRES_PASSWORD=odoo
+      - POSTGRES_USER=odoo
+      - POSTGRES_DB=postgres
+      - PGDATA=/var/lib/postgresql/data/pgdata
+    volumes:
+      - db-data:/var/lib/postgresql/data/pgdata 
+    restart: always
+
+  web:
+    container_name: odoo10_web
+    image: odoo:10.0
+    depends_on:
+      - db
+    ports:
+      - "10000:8069"
+    command: -- --dev=reload   
+    #command: odoo scaffold /mnt/extra-addons/odoo-debrand #to debug custom module
+    volumes:
+      - ./addons:/mnt/extra-addons
+      - ./etc:/etc/odoo
+      - web-data:/var/lib/odoo
+    restart: always
+
+volumes:
+  db-data:
+  web-data:
