@@ -1,0 +1,34 @@
+version: '3.8'
+services: 
+
+ mysql:
+  image: mysql
+  restart: always
+  hostname: mysql
+  environment:
+   - MYSQL_ROOT_PASSWORD=my-secret-pw
+   - MYSQL_DATABASE=traccar
+   - MYSQL_USER=traccar
+   - MYSQL_PASSWORD=traccar
+  volumes:
+   - mysql:/var/lib/mysql/
+   - ./conf/mysql.sql:/docker-entrypoint-initdb.d/mysql.sql
+
+ traccar:
+  image: traccar/traccar:5.2-alpine
+            
+  hostname: traccar
+  restart: always
+  ports:
+   - "5000-5030:5000-5030"
+   - "5040-5060:5040-5060"
+   - "8082:8082"
+  volumes:
+   - traccar-db:/opt/traccar/data/database
+   - ./conf/traccar.xml:/opt/traccar/conf/traccar.xml
+  depends_on:
+    - mysql
+
+volumes:
+ traccar-db:
+ mysql:
